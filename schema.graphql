@@ -1,0 +1,26 @@
+schema {
+  query: Queries
+  mutation: Mutation
+}
+
+type Queries {
+  me: User!
+  user(id: Int!): User
+}
+
+type Mutation {
+  addUser(firstName: String!, lastName: String!): User!
+  addUserProfileImage(userId: Int! file: Upload!): Int!
+}
+
+type User {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  role: Role!
+}
+
+type Role {
+  id: Int!
+  name: String!
+}
